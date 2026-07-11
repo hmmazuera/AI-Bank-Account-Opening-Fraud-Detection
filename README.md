@@ -192,7 +192,7 @@ docker build -t bank-account-fraud-detection .
 Run
 
 ```bash
-docker run -p 8501:8501 bank-account-fraud-detection
+docker run -p 8501:8501 bank-account-fraud
 ```
 
 ---
