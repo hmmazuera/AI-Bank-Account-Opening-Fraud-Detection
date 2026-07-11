@@ -1,7 +1,7 @@
 import joblib
 import numpy as np
 import pandas as pd
-import streamlit as st
+import streamlit_app as st
 from tensorflow.keras.models import load_model
 
 from constants import (CATEGORICAL_MAPPINGS, ELEVATED_RISK_THRESHOLD, HIGH_RISK_THRESHOLD,

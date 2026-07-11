@@ -32,7 +32,7 @@ jobs:
         run: |
           test -f app/constants.py
           test -f app/utils.py
-          test -f app/streamlit.py
+          test -f app/streamlit_app.py
           test -f models/dnn_model.keras
           test -f data/processed/scaler.pkl
           test -f data/processed/X_train.pkl
