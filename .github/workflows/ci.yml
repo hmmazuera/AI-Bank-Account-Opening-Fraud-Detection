@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-project:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify project files
+        run: |
+          test -f app/constants.py
+          test -f app/utils.py
+          test -f app/streamlit.py
+          test -f models/dnn_model.keras
+          test -f data/processed/scaler.pkl
+          test -f data/processed/X_train.pkl
+
+      - name: Verify application imports
+        run: |
+          python -c "
+          import sys
+          sys.path.insert(0, 'app')
+          from utils import load_resources
+          load_resources()
+          print('Model and preprocessing resources loaded successfully')
+          "
