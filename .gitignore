@@ -21,7 +21,6 @@ data/raw/
 # Models
 models/*.pkl
 models/*.joblib
-models/*.keras
 models/*.h5
 
 # Logs
