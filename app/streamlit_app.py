@@ -1,4 +1,4 @@
-import streamlit_app as st
+import streamlit as st
 from constants import (
     APPLICATION_SOURCES,
     BINARY_OPTIONS,
